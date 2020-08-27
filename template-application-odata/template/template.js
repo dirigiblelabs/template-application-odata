@@ -18,7 +18,7 @@ exports.getTemplate = function (parameters) {
         sources: [{
             location: "/template-application-odata/odata/application.odata.template",
             action: "generate",
-            rename: "data/{{fileNameBase}}.odata",
+            rename: "odata/{{fileNameBase}}.odata",
             engine: "velocity"
         }],
         parameters: [{

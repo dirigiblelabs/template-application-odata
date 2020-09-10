@@ -12,6 +12,7 @@
 #end
 #end
 #end
+#if($odataNamespace)
 {
     "namespace": "${odataNamespace}",
     "entities": [
@@ -98,6 +99,12 @@
 #end    
 #end
 #end
-#end
     ]
+#end
 }
+#else
+{
+    "namespace": "",
+    "entities": []
+}
+#end

@@ -8,6 +8,14 @@
  * Contributors:
  *   SAP - initial API and implementation
  */
+const generateUtils = require("ide-generate-service/template/generateUtils");
+const parameterUtils = require("ide-generate-service/template/parameterUtils");
+
+exports.generate = function (model, parameters) {
+    let templateSources = exports.getTemplate(parameters).sources;
+    parameterUtils.process(model, parameters)
+    return generateUtils.generateFiles(model, parameters, templateSources);
+};
 
 exports.getTemplate = function (parameters) {
 
@@ -18,7 +26,7 @@ exports.getTemplate = function (parameters) {
         sources: [{
             location: "/template-application-odata/odata/application.odata.template",
             action: "generate",
-            rename: "gen/odata/{{fileNameBase}}.odata",
+            rename: "gen/odata/{{projectName}}.odata",
             engine: "velocity"
         }],
         parameters: [{

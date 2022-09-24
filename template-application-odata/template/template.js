@@ -31,6 +31,10 @@ exports.getTemplate = function (parameters) {
             engine: "velocity"
         }],
         parameters: [{
+            name: "tablePrefix",
+            label: "Table Prefix",
+            placeholder: "Table prefix"
+        }, {
             name: "odataNamespace",
             label: "Namespace",
             placeholder: "Namespace for OData API"
